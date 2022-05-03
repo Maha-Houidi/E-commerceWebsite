@@ -1,0 +1,35 @@
+DROP DATABASE IF EXISTS ecommerce_db;
+CREATE DATABASE ecommerce_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE ecommerce_db;
+
+CREATE TABLE utilisateurs (
+  user_id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  name varchar(50),
+  email varchar(50) UNIQUE ,
+  username varchar(50) UNIQUE ,
+  password varchar(100),
+  role varchar(50) default 'User',
+  status varchar(50) default 'Not Active'
+) ENGINE=InnoDB;
+
+CREATE TABLE produits (
+  id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  lib_produit varchar(50) UNIQUE ,
+  type_produit varchar(50),
+  description text,
+  prix double,
+  qtte int(3),
+  image_produit varchar(255),
+  dispo varchar(100) default 'Disponible'
+) ENGINE=InnoDB;
+
+INSERT INTO utilisateurs(name,email,username,password,role,status) VALUES 
+('Admin', 'admin@gmail.com', 'admin', md5('admin'),'administrateur','Active');
+INSERT INTO utilisateurs(name,email,username,password,role,status) VALUES 
+('Malek', 'malek@yahoo.fr', 'malek', md5('malek'),'User','Active');
+
+
+INSERT INTO produits(lib_produit,type_produit,description,prix,qtte) VALUES 
+('ecran solaire', 'Soin','détails produit ..',110, 12);
+INSERT INTO produits(lib_produit,type_produit,description,prix,qtte) VALUES 
+('parfum', 'Parfum','détails.....',256.5, 10);
