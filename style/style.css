@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{
+    --mauve:#3d0333;
+    --bg-rose:#FEE3EC;
+    --gray:#595B83;
+    --col-gray: #B7CADB;
+    --col-fonce: #001D6E;
+    --col-medium: #7FB5FF;
+    --col-clair: #C4DDFF;
+}
+* {
+    box-sizing : border-box;
+    margin : 0;
+    padding : 0;
+}
+
+html {
+    scroll-behavior : smooth;
+    height : 100%;
+}
+
+body {
+    font-family : Montserrat;
+    min-height : 100%;
+    height: 100vh;
+    background-image: 
+        linear-gradient(to right bottom, 
+        rgba(248, 210, 252, 0.575),
+        rgba(223, 232, 245, 0.8)),
+    url(../images/bg/index-bg.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    /*clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);*/
+}
+
+h1 {
+    color : var(--gray)
+}
+/*squelette de la page*/
+.page_container{
+    display:flex;
+    flex-direction:column;
+}
+.main_container{
+    margin-top: 12vh;
+    background-color:rgba(245, 245, 245, 0.727);
+    display : flex;
+    flex-direction: row;
+}
+.main_container .cols-25 {
+    flex : 20%;
+}
+.main_container .cols-75 {
+    flex : 80%;
+}
+
+/*end*/
+
+/*sidebar*/
+.sidebar{
+    background-color:rgba(245, 245, 245, 0.11);
+}
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    width:100%;
+    min-height:100vh;
+    border-right: 5px solid var(--mauve);
+  }
+  
+  .sidebar li a {
+  padding : 13px 20px;
+  margin: 15px 0px;
+  color : var(--gray);
+  border : none;
+  cursor : pointer;
+  outline : none;
+  text-decoration : none;
+  display :block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  
+  }
+  .sidebar li a:hover {
+      background-color :var(--gray);
+      opacity: 0.8;
+      color : var(--bg-rose);
+      padding : 13px 20px;
+  }
+  
+/*sidebar end*/
+/*navbar*/
+nav.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    min-height: 12vh;
+    min-width: 100%;
+    z-index: 10;
+    background-color:transparent;
+} 
+nav.navigation .logo{
+    margin-left: 45px;
+} 
+nav.navigation .logo h1{
+    color: var(--mauve);
+    font-size: 25px;
+    line-height: 38px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+nav.navigation .menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto 20px auto 100px;
+}  
+nav.navigation .humbarger {
+    margin-right: 20px;
+    display: none;
+}   
+nav.navigation .humbarger .bar{
+    width: 30px;
+    height: 2px;
+    margin: 7px;
+    background: var(--mauve);
+}  
+nav.navigation .menu-list li a {
+    color: var(--gray);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+}
+nav.navigation .menu-list li a:hover{
+    background-color :var(--gray);
+    opacity: 0.8;
+    color : var(--bg-rose);
+    padding : 8px 8px;
+}
+nav.navigation .menu-list li a:active{
+    background-color :var(--gray);
+    color : var(--bg-rose);
+    padding : 13px 20px;
+}
+nav.navigation .menu-list li:last-child a{
+    background-color :rgb(186, 9, 9);
+    color : whitesmoke;
+    padding : 13px 20px;
+}
+
+
+@media only screen and (min-width: 850px) and (max-width: 991px) {
+    nav.navigation .menu-list {
+      width: 60%;
+    }
+    nav.navigation .menu-list li a{
+      font-size: 1rem;
+    }
+}
+  
+  /* Large Mobile :480px. */
+@media only screen and (max-width: 850px) {
+    nav.navigation .logo h1{
+        font-size: 20px;
+    }
+    nav.navigation .menu-list {
+      position: absolute;
+      top: 12vh;
+      min-width: 100%;
+      background: var(--bg-rose)/* #E4AEC5*/;
+      text-align: center;
+      display: none;
+    }
+    nav.navigation .menu-list li {
+      display: block;
+    }
+    nav.navigation .menu-list li a {
+      display: block;
+      padding: 20px;
+      transition: color 1s ease, padding 1s ease, background-color 1s ease;
+    }
+    nav.navigation .menu-list li a:hover{
+      color: var(--mauve);
+      padding-left: 30px;
+      background:#FAD9E6;
+    }
+    nav.navigation .humbarger{
+      display: block;
+    }
+}
+/*navbar end*/
+
+nav {
+    display : flex;
+    justify-content : end;
+    position : sticky;
+    top : 0;
+    background-color : transparent;
+    padding : 10px 0; 
+    
+}
+div.current, div.entete
+{
+    display : flex;
+    justify-content : space-between;
+    padding: 10px;
+    
+}
+div.entete
+{
+	/*background-color : #595B83;*/
+	color : var(--gray);
+	font-size:20px;
+	margin:10px;
+}
+div.mytable
+{
+margin: 0;
+padding: 10px;
+}
+nav .buttons {
+margin-top : 20px;
+}
+nav .buttons a {
+padding : 13px 20px;
+color : #595B83;
+border : none;
+font-size : 15px;
+cursor : pointer;
+outline : none;
+text-decoration : none;
+}
+nav .buttons a.login {
+background-color : inherit;
+}
+nav .buttons a.register {
+background-color : #595B83;
+color : #fff;
+}
+footer {
+padding : 25px 100px;
+color : #828282;
+bottom: 0;
+width: 100%;
+position: absolute;
+}
+.row {
+display : flex;
+}
+.cols-25 {
+flex : 20%;
+}
+.cols-75 {
+flex : 80%;
+}
+form.myfirstform {
+width : 30%;
+margin : 30px auto;
+}
+
+form.myfirstform input {
+width : 100%;
+padding : 13px 5px;
+border : none;
+outline : none;
+margin-top : 6px;
+margin-bottom : 16px;
+background : #FFDDEE;
+resize : none;
+border-bottom : 1px solid #595B83;
+color : black;
+}
+form.myfirstform ::placeholder
+{
+	color:black;
+}
+form.form-out{
+	width:30%; 
+	margin-left:10px; 
+	border-left:3px solid var(--gray) ;
+	padding:10px;
+}
+form.form-out input,select,textarea
+{
+width : 100%;
+padding : 13px 5px;
+border : none;
+outline : none;
+margin-top : 6px;
+margin-bottom : 16px;
+resize : none;
+border-bottom : 1px solid var(--gray);
+}
+form.form-out hr
+{
+border :  solid 2px #595B83 ;
+margin : 10px 0;
+}
+
+
+form label {
+font-weight : bold;
+}
+hr {
+border : #595B83 solid 2px;
+margin : 10px 0;
+}
+button.btn{
+padding : 13px 20px;
+color : #fff;
+border : none;
+font-size : 15px;
+cursor : pointer;
+outline : none;
+background-color : #595B83;
+}
+div.alert {
+padding : 13px 20px;
+background-color : var(--gray);
+color : var(--bg-rose);
+margin-bottom : 10px;
+}
+td a img.icon{
+    width:20px;
+    margin: 5px;
+}
+
+
+tr:first-child {
+background-color : var(--gray);
+font-variant : small-caps;
+color : var(--bg-rose);
+}
+table {
+border : 2px solid;
+border-collapse : collapse;
+width : 100%;
+margin-bottom:10px;
+}
+th, td {
+padding : 8px;
+text-align : left;
+
+}
+
+
+.text-right {
+text-align : right;
+}
+div.cols-75 div.current a {
+padding : 13px 20px;
+border : none;
+font-size : 15px;
+cursor : pointer;
+outline : none;
+text-decoration : none;
+display :block;
+background-color : var(--gray);
+color : var(--bg-rose);
+}
+
+.search {
+width : 100%;
+display : flex;
+justify-content : end;
+
+
+}
+.search > form input[type="text"] {
+width : 150px;
+padding : 13px 5px;
+border : none;
+outline : none;
+resize : none;
+border-bottom : 1px solid black;
+
+}
+.search > form .btn {
+background-color : var(--gray);
+padding : 13px 20px;
+color : var(--bg-rose);
+border : none;
+font-size : 15px;
+cursor : pointer;
+outline : none;
+text-decoration : none;
+}
+.pagination
+{
+
+color : var(--gray);
+font-size : 17px;
+cursor : pointer;
+text-decoration : none;
+}
+
+    
