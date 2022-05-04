@@ -103,8 +103,14 @@ nav.navigation {
     min-height: 12vh;
     min-width: 100%;
     z-index: 10;
-    background-color:transparent;
+    
 } 
+.nav-transparent{
+  background-color:transparent;
+}
+.nav-colored{
+  background-color: whitesmoke;
+}
 nav.navigation .logo{
     margin-left: 45px;
 } 
@@ -418,18 +424,15 @@ text-decoration : none;
 
 /*card style */
 
-  
-  
+
   ul {
     padding: 0;
     list-style: none;
   }
-  
-  
-  
-  
-  img {
+
+  .product figure img {
     max-width: 100%;
+    height:100px ;
   }
   
   figure {
