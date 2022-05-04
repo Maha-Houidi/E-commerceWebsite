@@ -79,7 +79,7 @@ mysqli_close($link);
 					?>
 					</select>
 					<textarea type="text" placeholder="Description" name="description" required></textarea>
-					<input type="number" placeholder="Prix" min = "0" max="1000" step="0.01" name="prix" required>
+					<input type="number" placeholder="Prix" min = "0" max="1000" step="1" name="prix" required>
 					<input type="number" placeholder="Quantité" min = "0" max="50" name="qtte" required>
 					<input type="file" placeholder="Image" name="image" >
 					<button type="submit" class="btn">Créer produit</button>

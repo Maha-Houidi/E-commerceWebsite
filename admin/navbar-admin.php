@@ -8,7 +8,7 @@
 	<!-- Navigation -->
 	<ul class="menu-list">
         <li><a href="g-produits.php">Admin</a></li>
-		<li><a href="#">Home</a></li>
+		<li><a href="../user/home.php">Home</a></li>
 		<li><a href="#">Products</a></li>
 		<li><a href="#">Cart</a></li>
 		<li><a href="#">Order</a></li>
