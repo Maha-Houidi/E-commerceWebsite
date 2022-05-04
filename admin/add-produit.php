@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 	$filename=$_FILES["image"]['name'];
 	$temp_name=$_FILES["image"]['tmp_name'];
-	$ok = move_uploaded_file($temp_name, $_SERVER["DOCUMENT_ROOT"] .  "/e-commerceTest/images/" . $filename);
+	$ok = move_uploaded_file($temp_name, $_SERVER["DOCUMENT_ROOT"] .  "/E-commerceWebsite/images/" . $filename);
 
 	if ($ok == false) {
 		$info = "##### false";
@@ -52,6 +52,7 @@ mysqli_close($link);
     <title>Tableau de bord</title>
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
+	<script src="../index.js"></script>
 
 </head>
 <body>

@@ -39,6 +39,7 @@ unset($_SESSION['info']);
 	 <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
+  
 
 </head>
 <body>
@@ -69,7 +70,7 @@ unset($_SESSION['info']);
                             ?>
                         <div class="product">
                             <figure>
-                                <img src="../images/bg/index-bg.jpg" alt="Product Image" class="product-image"> 
+                                <?php echo'<img src="../images/'.$rows['image_produit'].'" alt="Product Image" class="product-image">';?> 
                             </figure>
 
                             <div class="product-description">
@@ -142,6 +143,9 @@ unset($_SESSION['info']);
 			</div>
 		</div>
 </div>
+
+
+<script src="../index.js"></script>
 </body>
 </html>
 

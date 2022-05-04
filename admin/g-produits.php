@@ -39,6 +39,7 @@ unset($_SESSION['info']);
 	 <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
+	
 
 </head>
 <body>
@@ -123,6 +124,8 @@ unset($_SESSION['info']);
 			</div>
 		</div>
 </div>
+
+<script src="../index.js"></script>
 </body>
 </html>
 

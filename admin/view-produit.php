@@ -19,6 +19,7 @@ if($_GET)
     <title>Tableau de bord</title>
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
+    <script src="../index.js"></script>
 </head>
 <body>
 <div class="page_container">

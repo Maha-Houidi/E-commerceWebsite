@@ -1,10 +1,9 @@
 <?php
 $type_produit = array(
-1 => 'Crème',
-2 => 'Parfum',
-3 => 'Soin',
-4 => 'sss',
-5 => 'eee',
-6 => 'eeee'
+1 => 'Skincare',
+2 => 'Perfume',
+3 => 'Makeup',
+4 => 'Hair Care',
+5 => 'Nail'
 );
 ?>

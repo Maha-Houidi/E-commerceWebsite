@@ -11,6 +11,7 @@ require_once "../securite.php";
 	<link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
+    
 </head>
 <body>
     <div class="page_container">
@@ -29,5 +30,9 @@ require_once "../securite.php";
             </div>
         </div>
     </div>
+
+
+    
+    <script src="../index.js"></script>
 </body>
 </html>    

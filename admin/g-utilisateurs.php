@@ -38,6 +38,7 @@ unset($_SESSION['info']);
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
 
+
 </head>
 <body>
 <div class="page_container">
@@ -117,6 +118,8 @@ unset($_SESSION['info']);
 			</div>
 		</div>
 </div>
+
+<script src="../index.js"></script>
 </body>
 </html>
 

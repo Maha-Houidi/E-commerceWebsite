@@ -1,4 +1,4 @@
-<nav class="navigation">
+<nav class="navigation nav-transparent" id="mynav">
 
 	<!-- Logo -->
 	<div class="logo">
