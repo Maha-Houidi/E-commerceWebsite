@@ -29,11 +29,11 @@ $info="";
 unset($_SESSION['info']);
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de bord</title>
+    <title>Parfumerie</title>
 	 <link rel="stylesheet" href="../css/icon.css">
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
@@ -54,7 +54,7 @@ unset($_SESSION['info']);
 					<div class="search">
 						<form action="" method="">
 							<input type="text" placeholder="search" name="search">
-							<button type="submit" class="btn">Chercher</button>
+							<button type="submit" class="btn">Search</button>
 						</form>
 					</div>
 				</div>
@@ -73,7 +73,7 @@ unset($_SESSION['info']);
 							<th>Name</th>
 							<th>Email</th>
 							<th>Username</th>
-							<th>Rôle</th>
+							<th>Role</th>
 							<th>Status</th>
 							<th>Actions</th>
 						</tr>
@@ -90,11 +90,11 @@ unset($_SESSION['info']);
 							<td><?php echo $rows['role']; ?></td> 
 							<td><?php echo $rows['status']; ?></td> 
 							<td>
-							<a href="view-user.php?id=<?php echo $rows['user_id']; ?>" title="Consulter">
+							<a href="view-user.php?id=<?php echo $rows['user_id']; ?>" title="View">
 							<img class="icon" src="../images/icons/info.png"></a>
-							<a onclick="return confirm('Etes-vous sûr de vouloir activer ce compte utilisateur')" 
+							<a onclick="return confirm('Are you sure you want to activate this user account')" 
 							href="active-user.php?id=<?php echo $rows['user_id']; ?>
-							&& status=<?php echo $rows['status']; ?> " title="Activer">
+							&& status=<?php echo $rows['status']; ?> " title="Activate">
 							<img class="icon" src="../images/icons/modifier.png"></a>
 							</td>
 							

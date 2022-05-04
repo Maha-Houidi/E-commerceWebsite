@@ -1,6 +1,7 @@
 <?php
 require_once "../config.inc.php";
 require_once "../securite.php";
+$username = $_SESSION['user']['username'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,10 +17,12 @@ require_once "../securite.php";
 <body>
     <div class="page_container">
         <div class="nav_container">
-            <?php 
-        
-                include "navbar-user.php"; 
-            ?>  
+            <?php if($username=="admin"){
+                    include_once "../admin/navbar-admin.php";
+                }else{
+                    include_once "navbar-user.php";
+                }
+            ?>   
         </div>
         <div class="main_container">
             <div class="col-25">

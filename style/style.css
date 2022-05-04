@@ -102,7 +102,7 @@ nav.navigation {
     position: fixed;
     min-height: 12vh;
     min-width: 100%;
-    z-index: 10;
+    z-index: 20;
     
 } 
 .nav-transparent{
@@ -425,15 +425,15 @@ text-decoration : none;
 /*card style */
 
 
-  ul {
+  /* ul {
     padding: 0;
     list-style: none;
-  }
+  } */
 
-  .product figure img {
-    max-width: 100%;
-    height:100px ;
-  }
+  .product figure .product-image {
+    width: 100%; 
+    height: 220px;
+   }
   
   figure {
     margin: 0;
@@ -448,10 +448,10 @@ text-decoration : none;
   
   .product {
     background: whitesmoke;
-    max-width: 250px;
+    width: 250px;
     position: relative;
     margin: 40px;
-    z-index: 15;
+    z-index: 15; 
     -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     -o-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
@@ -564,7 +564,7 @@ text-decoration : none;
   
     .product .product-sidebar {
       width: 100%;
-      height: 50px;
+      height: 100px;
       bottom: 0px;
       left: 0;
       top: inherit;

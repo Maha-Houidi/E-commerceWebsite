@@ -18,7 +18,7 @@ if($_GET)
     <title>Tableau de bord</title>
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
-    <script src="../index.js"></script>
+ 
 
 , 
 </head>
@@ -33,27 +33,29 @@ if($_GET)
             </div>
             <div class="cols-75">
                 <div class="entete">
-                    Informations sur l'utilisateur
+                    User's Informations
                 </div>
                 <form class="form-out" action="g-utilisateurs.php" method="post">
                     <label>ID</label>
                     <input type="text" value="<?php echo $data['user_id']?>" disabled>
-                    <label>Nom et prénom</label>
+                    <label>Name</label>
                     <input type="text" value="<?php echo $data['name']?>" disabled>
                     <label>E-Mail</label>
                     <input type="text" value="<?php echo $data['email']?>" name="lib" disabled>
-                    <label>Pseudonyme</label>
+                    <label>Username</label>
                     <input type="text" value="<?php echo $data['username']?>" disabled>
-                    <label>Rôle</label>
+                    <label>Role</label>
                     <input type="text" value="<?php echo $data['role']?>" disabled>
                     <label>Status</label>
                     <input type="text" value="<?php echo $data['status']?>" disabled>
-                    <button type="submit" class="btn">Liste des utilisateurs</button>
+                    <button type="submit" class="btn">Users list</button>
 
                 </form>
             </div>
         </div>
-</div>        
+</div> 
+
+<script src="../index.js"></script>
 </body>
 </html>
 

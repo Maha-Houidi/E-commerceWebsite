@@ -52,7 +52,7 @@ mysqli_close($link);
     <title>Tableau de bord</title>
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
-	<script src="../index.js"></script>
+	
 
 </head>
 <body>
@@ -67,11 +67,11 @@ mysqli_close($link);
 		<div class="cols-75">
 			
 			<div class="entete">
-				Nouveau produit
+				New product
 			</div>
 			<form class ="form-out" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"  enctype="multipart/form-data">
 				
-				<input type="text" placeholder="Libellé" name="lib" required>
+				<input type="text" placeholder="Product label" name="lib" required>
 				<select name="type" required>
 					<option value="" selected>Type</option>
 					<?php
@@ -80,13 +80,15 @@ mysqli_close($link);
 					?>
 					</select>
 					<textarea type="text" placeholder="Description" name="description" required></textarea>
-					<input type="number" placeholder="Prix" min = "0" max="1000" step="1" name="prix" required>
-					<input type="number" placeholder="Quantité" min = "0" max="50" name="qtte" required>
+					<input type="number" placeholder="Price" min = "0" max="1000" step="1" name="prix" required>
+					<input type="number" placeholder="Quantity" min = "0" max="50" name="qtte" required>
 					<input type="file" placeholder="Image" name="image" >
-					<button type="submit" class="btn">Créer produit</button>
+					<button type="submit" class="btn">Add product</button>
 				</form>
 			</div>
 		</div>
 	</div>
+
+	<script src="../index.js"></script>
 </body>
 </html>

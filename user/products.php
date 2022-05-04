@@ -45,7 +45,12 @@ unset($_SESSION['info']);
 <body>
 <div class="page_container">
         <div class="nav_container">
-            <?php include_once "navbar-user.php"; ?>  
+            <?php if($username=="admin"){
+                include_once "../admin/navbar-admin.php";
+            }else{
+                include_once "navbar-user.php";
+            }
+            ?> 
         </div>
         <div class="main_container no-white">
             <div class="cols-25">
@@ -57,7 +62,7 @@ unset($_SESSION['info']);
 					<div class="search">
 						<form action="" method="">
 							<input type="text" placeholder="search" name="search">
-							<button type="submit" class="btn">Chercher</button>
+							<button type="submit" class="btn">Search</button>
 						</form>
 					</div>
 				</div>
@@ -90,13 +95,11 @@ unset($_SESSION['info']);
                             <div class="product-sidebar">
                                 <a href="" title="add to cart">
                                     <button class="buy">
-                                        <!-- <span>Add to Cart</span> -->
                                     </button>
                                 </a>
 
                                 <a href="" title="more info">
                                     <button class="info">
-                                    <!-- <span>MORE INFO</span> -->
                                     </button> 
                                 </a>
 

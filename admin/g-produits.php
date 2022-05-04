@@ -54,11 +54,11 @@ unset($_SESSION['info']);
             <div class="cols-75">
                 
 				<div class="current">
-					<a href="add-produit.php" >Nouveau</a>
+					<a href="add-produit.php" >New</a>
 					<div class="search">
 						<form action="" method="">
 							<input type="text" placeholder="search" name="search">
-							<button type="submit" class="btn">Chercher</button>
+							<button type="submit" class="btn">Search</button>
 						</form>
 					</div>
 				</div>
@@ -71,12 +71,12 @@ unset($_SESSION['info']);
 					<table>
 						<tr>
 							<th>N°</th>
-							<th>Libellé</th>
+							<th>Label</th>
 							<th>Type</th>
 							<th>Description</th>
-							<th>Prix</th>
-							<th>Quantité</th>
-							<th>Disponibilite</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Availability</th>
 							<th>Actions</th>
 						</tr>
 						<?php
