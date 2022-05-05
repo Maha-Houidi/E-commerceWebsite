@@ -17,13 +17,12 @@
 
 html {
     scroll-behavior : smooth;
-    height : 100%;
+    min-height : 100%;
 }
 
 body {
     font-family : Montserrat;
     min-height : 100%;
-    height: 100vh;
     background-image: 
         linear-gradient(to right bottom, 
         rgba(248, 210, 252, 0.575),
@@ -55,12 +54,16 @@ h1 {
 .main_container .cols-75 {
     flex : 80%;
 }
-
+.no-white{
+  background-color: transparent; /*main container of user page*/ 
+} 
 /*end*/
 
 /*sidebar*/
 .sidebar{
     background-color:rgba(245, 245, 245, 0.11);
+    border-right: 5px solid var(--mauve);
+    position: fixed;
 }
 .sidebar ul {
     list-style-type: none;
@@ -68,7 +71,19 @@ h1 {
     padding: 10px;
     width:100%;
     min-height:100vh;
-    border-right: 5px solid var(--mauve);
+  }
+  .sidebar ul .sidebar-title{
+    color: var(--mauve);
+    border-bottom: 2px solid #3d0333;
+    font-size:1.4rem;
+    padding : 13px 20px;
+  margin: 15px 0px;
+  outline : none;
+  text-decoration : none;
+  display :block;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   }
   
   .sidebar li a {
@@ -254,11 +269,12 @@ background-color : #595B83;
 color : #fff;
 }
 footer {
+
 padding : 25px 100px;
 color : #828282;
+position: fixed;
 bottom: 0;
-width: 100%;
-position: absolute;
+width: 100%; 
 }
 .row {
 display : flex;
@@ -403,17 +419,15 @@ text-decoration : none;
 }
 .pagination
 {
-
 color : var(--gray);
 font-size : 17px;
 cursor : pointer;
 text-decoration : none;
+float: right;
+margin-right: 30px;
+font-weight: 500;
 }
-
- .no-white{
-     background-color: transparent;
-
- }   
+  
 
 .main_container .products-container{
     display:flex;
@@ -424,11 +438,6 @@ text-decoration : none;
 
 /*card style */
 
-
-  /* ul {
-    padding: 0;
-    list-style: none;
-  } */
 
   .product figure .product-image {
     width: 100%; 
@@ -589,6 +598,26 @@ text-decoration : none;
   
   
 /*card style end */
+
+
+/*home style */
+.text-box{
+  position:absolute;
+  top:25vh;
+  left:25vw;
+  transform: translateY(-50,-50);
+  text-transform: uppercase;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-top: 2px solid #010000;
+  border-bottom: 2px solid #010000;
+
+}
+.text-box .main-title{
+  font-family: Helvetica, sans-serif;
+  position: center;
+}
 
       
     

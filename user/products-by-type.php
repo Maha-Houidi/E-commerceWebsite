@@ -13,16 +13,25 @@ $results_per_page = 5;
 
 //determine the sql LIMIT starting number for the results on the displaying page  
 $page_first_result = ($page-1) * $results_per_page;  
-$sql = "select * from produits where qtte like '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
-$link->query("SET NAMES 'utf8'");
-$res = $link->query($sql);
+// $sql = "select * from produits where qtte like '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
+// $link->query("SET NAMES 'utf8'");
+// $res = $link->query($sql);
 
-$query = "select *from produits where qtte like '%$search%'";  
-$result = mysqli_query($link, $query);  
-$row_count = mysqli_num_rows($result);  
-$number_of_page = ceil ($row_count / $results_per_page);  	
+// $query = "select *from produits where qtte like '%$search%'";  
+// $result = mysqli_query($link, $query);  
+// $row_count = mysqli_num_rows($result);  
+// $number_of_page = ceil ($row_count / $results_per_page);  	
  
- 
+if($_GET)
+{
+	extract($_GET);
+	$sql = "select * from produits where type_produit = '$type'";
+	$link->query("SET NAMES 'utf8'");
+	$result = $link->query($sql);
+    $row_count = mysqli_num_rows($result);  
+    $number_of_page = ceil ($row_count / $results_per_page);
+
+}
 	
 if(isset($_SESSION['info']))
 $info = $_SESSION['info'];
@@ -71,7 +80,7 @@ unset($_SESSION['info']);
                     <?php
 						if ($row_count>0)
 						{
-						while ($rows = $res->fetch_assoc()){  
+						while ($rows = $result->fetch_assoc()){  
                             ?>
                         <div class="product">
                             <figure>
@@ -104,22 +113,22 @@ unset($_SESSION['info']);
                                 </a>
 
                             </div>
-                            
                         </div>
-                        <?php
+                            
+                            <?php
 						}
-						}
-						else
-							echo "<h3>Pas de produits en cours</h3>";
+                    }
+                    else
+                    echo "<h3>Pas de produits en cours</h3>";
+                    
+                    ?>   
+                </div>
 
-						?>   
 
-			    </div>
-                
-                
+
 				<?php
 					//display the link of the pages in URL  
-						for($page = $number_of_page ; $page>=1; $page--) {  
+						for($page = 1; $page<= $number_of_page; $page++) {  
 							echo '<a class=pagination href = "products.php?page=' . $page . '">page ' .$page. ' </a>';  
 						}  
 				?>		
