@@ -375,6 +375,11 @@ padding : 8px;
 text-align : left;
 
 }
+tr .total-prix {
+  background-color: #4e52a5;
+  color:#010000;
+  font-weight: 700;
+}
 
 
 .text-right {
@@ -443,8 +448,10 @@ font-weight: 500;
   .product figure .product-image {
     width: 100%; 
     height: 220px;
+  }
+   .product-cart-img {
+   height: 100px;
    }
-  
   figure {
     margin: 0;
     line-height: 0;
