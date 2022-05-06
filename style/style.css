@@ -4,10 +4,7 @@
     --mauve:#3d0333;
     --bg-rose:#FEE3EC;
     --gray:#595B83;
-    --col-gray: #B7CADB;
-    --col-fonce: #001D6E;
-    --col-medium: #7FB5FF;
-    --col-clair: #C4DDFF;
+    --red:rgb(186, 9, 9);
 }
 * {
     box-sizing : border-box;
@@ -47,6 +44,7 @@ h1 {
     background-color:rgba(245, 245, 245, 0.727);
     display : flex;
     flex-direction: row;
+    min-height: 100%;
 }
 .main_container .cols-25 {
     flex : 20%;
@@ -175,7 +173,7 @@ nav.navigation .menu-list li a:active{
     padding : 13px 20px;
 }
 nav.navigation .menu-list li:last-child a{
-    background-color :rgb(186, 9, 9);
+    background-color :var(--red);
     color : whitesmoke;
     padding : 13px 20px;
 }
@@ -628,7 +626,12 @@ font-weight: 500;
 }
 
       
-    
+/*home*/
+
+p.warning{
+  font-size: 20px;
+  color:var(--red) ;
+}
     
  
   

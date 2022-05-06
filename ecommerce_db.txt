@@ -29,7 +29,14 @@ INSERT INTO utilisateurs(name,email,username,password,role,status) VALUES
 ('Malek', 'malek@yahoo.fr', 'malek', md5('malek'),'User','Active');
 
 
-INSERT INTO produits(lib_produit,type_produit,description,prix,qtte) VALUES 
-('ecran solaire', 'Soin','détails produit ..',110, 12);
-INSERT INTO produits(lib_produit,type_produit,description,prix,qtte) VALUES 
-('parfum', 'Parfum','détails.....',256.5, 10);
+CREATE TABLE cart (
+  cart_id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  product_id int references produits(id) ,
+  user_id int references utilisateurs(user_id),
+  qte int,
+  subtotal double
+) ENGINE=InnoDB;
+
+
+
+commit;

@@ -102,12 +102,12 @@ unset($_SESSION['info']);
                             </div>
 
                             <div class="product-sidebar">
-                                <a href="" title="add to cart">
+                                <a href="details-product.php?id=<?php echo $rows['id']; ?>" title="add to cart">
                                     <button class="buy">
                                     </button>
                                 </a>
 
-                                <a href="" title="more info">
+                                <a href="details-product.php?id=<?php echo $rows['id']; ?>" title="more info">
                                     <button class="info">
                                     </button> 
                                 </a>

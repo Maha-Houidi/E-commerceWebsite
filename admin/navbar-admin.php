@@ -12,7 +12,7 @@
 		<li><a href="../user/products.php">Products</a></li>
 		<li><a href="../user/cart.php">Cart</a></li>
 		<li><a href="#">Order</a></li>
-        <li><a href="#">Profile</a></li>
+        <li><a href="profile.php">Profile</a></li>
         <li><a href="../logout.inc.php">Logout</a></li>
 	</ul>
 

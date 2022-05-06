@@ -11,7 +11,7 @@
 		<li><a href="products.php">Products</a></li>
 		<li><a href="cart.php">Cart</a></li>
 		<li><a href="#">Order</a></li>
-        <li><a href="#">Profile</a></li>
+        <li><a href="profile.php">Profile</a></li>
         <li><a href="../logout.inc.php">Logout</a></li>
 	</ul>
 
