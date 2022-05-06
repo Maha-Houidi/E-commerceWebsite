@@ -85,12 +85,12 @@ mysqli_close($link);
                             if($rows['dispo']=="disponible"){
                             ?>
                             
-                            <td><form class="form-out" action="add-cart.php" method="post">
+                            <td><form class="form-out" action="commander.php" method="post">
                                     <label> Quantity </label>
                                     <input type="hidden" name="product_id" value="<?php echo $rows['id']; ?>">
                                     <input type="hidden" name="price" value="<?php echo $rows['prix']; ?>">
                                     <input type="number" value="1" min="1" max="10" name="qte" required>
-                                    <button class="btn" type="submit" >add to cart</button>
+                                    <button class="btn" type="submit" >commander</button>
                                 </form>
                             </td>
                             <?php

@@ -37,6 +37,24 @@ CREATE TABLE cart (
   subtotal double
 ) ENGINE=InnoDB;
 
+CREATE TABLE panier (
+  id_panier int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  user_id int references utilisateurs(user_id),
+  total float,
+  date_creation Date,
+  date_modification Date
+) ENGINE=InnoDB;
+
+CREATE TABLE commande (
+  id int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  product_id int references produits(id) ,
+  qte int,
+  panier int references panier(id_panier) ,
+  total double,
+  date_creation Date,
+  date_modification Date
+) ENGINE=InnoDB;
+
 
 
 commit;

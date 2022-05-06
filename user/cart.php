@@ -126,7 +126,7 @@ unset($_SESSION['info']);
 						}  
 					?>
 				</div>
-		
+		</div>
 </div>
 
 <script src="../index.js"></script>
