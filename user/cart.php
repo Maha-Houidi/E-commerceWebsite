@@ -43,7 +43,7 @@ unset($_SESSION['info']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Parfumerie</title>
     <link rel="stylesheet" href="../css/font-style.css">
     <link rel="stylesheet" href="../style/style.css">
 	
@@ -72,9 +72,9 @@ unset($_SESSION['info']);
 							<th>image</th>
 							<th>Description</th>
 							<th>Price</th>
-							<th>Quantity</th> <!--tijjem tbaddel fiha -->
-							<th>Subtotal</th> <!--price * quantity  -->
-							<th>Actions</th> <!--supprimer -->
+							<th>Quantity</th> 
+							<th>Subtotal</th> 
+							<th>Actions</th> 
 						</tr>
 						<?php
 						if ($row_count>0)
@@ -94,17 +94,19 @@ unset($_SESSION['info']);
 							<td><?php echo $rows['subtotal']; ?></td>
 							<td>
 							
-							<a onclick="return confirm('Are you sure you want to delete this product?')" 
-							href="delete-produit.php?id=<?php echo $rows['id']; ?>" title="Supprimer">
+							<a onclick="return confirm('Are you sure you want to delete this product from cart ?')" 
+							href="delete-from-cart.php?cart_id=<?php echo $rows['cart_id']; ?>" title="Supprimer">
 							<img class="icon" src="../images/icons/supprimer.png"></a>
 							</td>
-                        </form>
+                        
 						</tr>
 						<?php 
 						}
                         ?>
                         <tr class="total-prix">
-                        <td colspan='3'>Total : </td>
+							<td></td>
+							<td></td>
+                        <td colspan='2'> <b> Total :</b> </td>
                          <td><?php echo $total; ?> dt</td>   
                         </tr>
                         <?php
@@ -115,7 +117,8 @@ unset($_SESSION['info']);
 						?> 
 						
 					</table>
-                    <button> <a href="order.php">Order</a></button> 
+					
+                    <button class="btn"> <a href="order.php">Order</a></button> 
 					<?php
 					//display the link of the pages in URL  
 						for($page = 1; $page<= $number_of_page; $page++) {  
@@ -123,14 +126,7 @@ unset($_SESSION['info']);
 						}  
 					?>
 				</div>
-		<!-- <div class="product-order">
-            <div class="total-price">
-                
-            </div>
-            <div class="order-btn">
-
-            </div>
-        </div> -->
+		
 </div>
 
 <script src="../index.js"></script>

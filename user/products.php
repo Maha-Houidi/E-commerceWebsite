@@ -66,7 +66,11 @@ unset($_SESSION['info']);
 						</form>
 					</div>
 				</div>
-               
+                <?php if (!empty($info)) { ?>		
+					<div class="alert">
+						<?php echo $info; ?>
+					</div>
+					<?php } ?>
                 <div class="products-container">
                     <?php
 						if ($row_count>0)
@@ -93,7 +97,7 @@ unset($_SESSION['info']);
                             </div>
 <!--panier -->
                             <div class="product-sidebar">
-                                <a href="add-cart.php?id=<?php echo $rows['id']; ?>" title="add to cart">
+                                <a href="details-product.php?id=<?php echo $rows['id']; ?>" title="add to cart">
                                     <button type="submit" class="buy">
                                     </button>
                                 </a>

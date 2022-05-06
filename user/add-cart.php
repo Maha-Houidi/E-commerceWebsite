@@ -6,13 +6,24 @@ $userid= $_SESSION['user']['user_id'];
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	$info="";
+	$erreur="";
 	$product_id = trim($_POST["product_id"]);
     $qte= trim($_POST["qte"]);
     $price = trim($_POST["price"]);
-    $subtotal=$qte*$price;
+	
 
-	if(empty($info)){
+	$query="select qtte from produits where id=$product_id)";
+	$link->query("SET NAMES 'utf8'");
+	$resultat = $link->query($query);
+	
+	while($resultat){
+		if((int)$qte > $resultat['qtte']){
+			$erreur = "Quantity not available ! ";
+	}
+	};
+	
+	if(empty($erreur)){
+		 $subtotal=$qte*$price;
 		$sql = "insert into cart (product_id,user_id,qte,subtotal) values ('$product_id','$userid','$qte','$subtotal')";
 		$link->query("SET NAMES 'utf8'");
 		$result = $link->query($sql);
@@ -20,15 +31,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	
 		if ($result == true)
 		{		
-			$info =  "Produit ajouté avec succès";	
+			$_SESSION['info']=  "Product added successfully";	
 		}
 		else
 		{
-			$info = "Produit déjà existe";
+			$_SESSION['info'] = "Error";
 		}
 	
+	}else{
+		$_SESSION['info'] = $erreur;
 	}
-	$_SESSION['info'] = $info;
 	header('location:products.php');
 }
 mysqli_close($link);

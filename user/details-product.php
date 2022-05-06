@@ -1,7 +1,10 @@
 <?php
 require_once "../securite.php";
 require_once "../config.inc.php";
-
+$request1 = "update produits set dispo = 'Indisponible' where qtte=0";
+$request2 = "update produits set dispo = 'disponible' where qtte>0";
+$link->query($request1);
+$link->query($request2);
 $username= $_SESSION['user']['username'];
 $userid= $_SESSION['user']['user_id'];
 if($_GET)
@@ -38,7 +41,7 @@ mysqli_close($link);
             }
             ?> 
         </div>
-        <div class="main_container no-white">
+        <div class="main_container ">
             <div class="cols-25">
 				<?php include_once "sidebar-user.php" ?>
             </div>
@@ -54,36 +57,50 @@ mysqli_close($link);
 				</div>
                
                 <div class="products-container">
+                    
                     <?php
 						if ($row_count>0)
 						{
 						while ($rows = $res->fetch_assoc()){  
                             ?>
                         <table>
+                            <tr></tr>
                             <tr>
-                                <td><?php echo'<img src="../images/'.$rows['image_produit'].'" alt="Product Image" class="product-image">';?> </td>
+                                <td><?php echo'<img src="../images/'.$rows['image_produit'].'" alt="Product Image" class="product-cart-img">';?> </td>
                                 <td>
                                     <div class="info">
-                                        <h1> <?php echo $rows['lib_produit']?> </h1>
+                                        <h2> <?php echo $rows['lib_produit']?> </h2>
                                         <p>
                                         <?php echo $rows['type_produit']?>
-                                        </p>
+                                        </p> <br>
                                         <div class="price">
-                                            <?php echo $rows['prix']?>
+                                            Price : <?php echo $rows['prix']?> dt
                                         </div>
-                                        <p><?php echo $rows['description']?></p>
+                                        <p ><?php echo $rows['description']?></p>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                            <td><form action="add-cart.php" method="post">
+                            <?php 
+                            if($rows['dispo']=="disponible"){
+                            ?>
+                            
+                            <td><form class="form-out" action="add-cart.php" method="post">
                                     <label> Quantity </label>
                                     <input type="hidden" name="product_id" value="<?php echo $rows['id']; ?>">
                                     <input type="hidden" name="price" value="<?php echo $rows['prix']; ?>">
                                     <input type="number" value="1" min="1" max="10" name="qte" required>
-                                    <input type="submit" value="add to cart">
+                                    <button class="btn" type="submit" >add to cart</button>
                                 </form>
                             </td>
+                            <?php
+                            }else{
+                            ?>
+                            <td colspan='5'><p class="warning">This product is not available </p>
+                            </td>
+                            <?php
+                            }
+                            ?>
                             </tr>
                         </table>
                             
@@ -92,7 +109,7 @@ mysqli_close($link);
 						}
 						}
 						else
-							echo "<h3>Pas de produits en cours</h3>";
+							echo "<h3>Product does'nt exist</h3>";
 
 						?>   
 
